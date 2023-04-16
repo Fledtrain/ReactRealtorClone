@@ -6,13 +6,13 @@ import Offers from "./pages/Offers";
 import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <h1 className="text-4xl bg-red-500 ">Hello World</h1>
-      <p className="text-3l">Hi</p>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
