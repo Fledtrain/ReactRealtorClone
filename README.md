@@ -1,9 +1,19 @@
 # ReactRealtorClone
+Realtor Clone created using Reactjs and Tailwind CSS
 
 
 ## Features
 - Work In Progress Build
 
+
+## Installation
+
+```sh
+npm i
+npm i -D @tailwindcss/forms
+npm i -D tailwindcss postcss autoprefixer
+npm i react-icons --save
+```
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://fledtrain.github.io/E-Portfolio)
