@@ -16,6 +16,11 @@ const SignUp = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault(); // Prevents the page from reloading
+    
+  };
+
   return (
     <>
       <section>
@@ -30,7 +35,7 @@ const SignUp = () => {
           </div>
           <div className="w-full md:w-[66%] lg:w-[41%] lg:ml-20">
             {/* Form Begin */}
-            <form>
+            <form onSubmit={onSubmit}>
               <input
                 type="text"
                 id="name"
