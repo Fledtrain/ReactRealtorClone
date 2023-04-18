@@ -14,7 +14,7 @@ const ForgotPassword = () => {
       <section>
         <h1 className="text-3xl text-center mt-6 font-bold">Forgot Password</h1>
         <div className="flex justify-center flex-wrap items-center px-6 py-12 max-w-6xl mx-auto">
-          <div className="md:w-[67%] lg-w-[50%] mb-12 md:mb-6">
+          <div className="md:w-[70%] lg:w-[50%] mb-12 md:mb-6">
             <img
               src="https://images.unsplash.com/photo-1585914641050-fa9883c4e21c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80"
               alt="Key pic"
