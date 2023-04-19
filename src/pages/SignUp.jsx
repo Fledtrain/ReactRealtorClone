@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { db } from "../firebase";
+import { async } from "@firebase/util";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import OAuth from "../components/OAuth";
 
 const SignUp = () => {
@@ -12,13 +22,45 @@ const SignUp = () => {
   });
 
   const { name, email, password } = formData;
+  const navigate = useNavigate();
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault(); // Prevents the page from reloading
-    
+    try {
+      const auth = getAuth();
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      //Comes from form data
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      });
+
+      const user = userCredential.user;
+      const formDataCopy = { ...formData };
+      delete formDataCopy.password;
+      formDataCopy.timestamp = serverTimestamp();
+
+      await setDoc(doc(db, "users", user.uid), formDataCopy);
+      toast.success("Account created successfully");
+      navigate("/");
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        toast.error("Email already in use");
+      } else if (error.code === "auth/invalid-email") {
+        toast.error("Invalid email");
+      } else if (error.code === "auth/weak-password") {
+        toast.error("Password must be at least 6 characters");
+      } else {
+        toast.error("Something went wrong");
+      }
+    }
   };
 
   return (
