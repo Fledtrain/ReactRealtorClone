@@ -37,7 +37,7 @@ const SignIn = () => {
                 id="email"
                 value={email}
                 onChange={onChange}
-                placeholder="EmailAddress@email.com"
+                placeholder="Email Address"
               />
               <div className="relative mb-6">
                 <input
