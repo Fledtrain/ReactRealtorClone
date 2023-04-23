@@ -60,6 +60,10 @@ const Profile = () => {
               type="text"
               id="name"
               value={name}
+              aria-labelledby={name}
+              aria-label={name}
+              placeholder={name}
+              title={name}
               disabled={!changeDetail}
               onChange={onChange}
             />
@@ -70,6 +74,10 @@ const Profile = () => {
               type="email"
               id="email"
               value={email}
+              aria-labelledby={email}
+              aria-label={email}
+              placeholder={email}
+              title={email}
               disabled
             />
 
@@ -101,6 +109,9 @@ const Profile = () => {
             className="w-full bg-blue-600 text-white uppercase px-7 py-3
           text-sm font-medium rounded shadow-md hover:bg-blue-700 transition ease-in-out 
           duration-150 hover:shadow-l active:bg-blue-800"
+          aria-label="Create Listing"
+          aria-labelledby="Create Listing"
+          title="Sell or Rent Your home"
           >
             <Link
               to="/create-listing"
