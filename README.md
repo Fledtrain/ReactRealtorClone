@@ -15,6 +15,7 @@ npm i -D tailwindcss postcss autoprefixer
 npm i react-icons --save
 npm i firebase
 npm i react-toastify
+npm i uuid
 ```
 
 ## 🔗 Links
