@@ -16,6 +16,7 @@ npm i react-icons --save
 npm i firebase
 npm i react-toastify
 npm i uuid
+npm i react-moment@1.1.2
 ```
 
 ## 🔗 Links
