@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
-import { MdLocationOn } from "react-icons/md";
+import { MdLocationOn, MdEdit } from "react-icons/md";
+import { FaTrash } from "react-icons/fa";
 
-const ListingItem = ({ listing, id }) => {
+const ListingItem = ({ listing, id, onEdit, onDelete }) => {
   return (
     <>
       <li
@@ -51,7 +52,7 @@ const ListingItem = ({ listing, id }) => {
                   {listing.bedrooms > 1 ? `${listing.bedrooms} Beds` : "1 Bed"}
                 </p>
                 <div>
-                <p className="font-bold text-xs">
+                  <p className="font-bold text-xs">
                     {listing.baths > 1 ? `${listing.baths} Baths` : "1 Bath"}
                   </p>
                 </div>
@@ -60,6 +61,18 @@ const ListingItem = ({ listing, id }) => {
           </div>
           {/* End of Listing/Bed/Bath Section */}
         </Link>
+        {onDelete && (
+          <FaTrash
+            className="absolute bottom-2 right-2 h-4 cursor-pointer text-red-500"
+            onClick={() => onDelete(listing.id)}
+          />
+        )}
+        {onEdit && (
+          <MdEdit
+            className="absolute bottom-2 right-9 h-4 cursor-pointer text-black"
+            onClick={() => onEdit(listing.id)}
+          />
+        )}
       </li>
     </>
   );
