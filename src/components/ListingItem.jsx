@@ -13,7 +13,7 @@ const ListingItem = ({ listing, id, onEdit, onDelete }) => {
       >
         <Link to={`/category/${listing.type}/${id}`}>
           <img
-            className="h-[170px] w-full object-cover hover:scale-125 transition ease-in-out duration-250"
+            className="h-[170px] w-full object-cover hover:scale-105 transition ease-in-out duration-250"
             loading="lazy"
             src={listing.imgUrls[0]}
           />

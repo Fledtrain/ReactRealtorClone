@@ -14,6 +14,7 @@ import Spinner from "./components/Spinner";
 import PrivateRoute from "./components/PrivateRoute";
 import useAuthStatus from "./hooks/useAuthStatus";
 import "react-toastify/dist/ReactToastify.css";
+import EditListing from "./pages/EditListing";
 function App() {
   return (
     <>
@@ -27,6 +28,10 @@ function App() {
           <Route path="/create-listing" element={<PrivateRoute />}>
             <Route path="/create-listing" element={<CreateListing />} />
           </Route>
+          <Route path="edit-listing" element={<PrivateRoute />}>
+            <Route path="/edit-listing/:listingID" element={<EditListing />} />
+          </Route>
+
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/offers" element={<Offers />} />
           <Route path="/sign-up" element={<SignUp />} />
