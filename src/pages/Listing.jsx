@@ -11,11 +11,15 @@ import SwiperCore, {
   Pagination,
 } from "swiper";
 import "swiper/css/bundle";
+import { FiShare } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 const Listing = () => {
   const params = useParams();
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(true);
+  // For Showing shared button copied to clipboard
+  const [shareLinkCopied, setShareLinkedCopied] = useState(false);
 
   SwiperCore.use([Autoplay, Navigation, Pagination]);
   useEffect(() => {
@@ -54,8 +58,34 @@ const Listing = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div
+        className="fixed top-[13%] right-[3%] z-10 bg-white cursor-pointer border-2 border-gray-400 rounded-full w-11 h-11 flex
+      justify-center items-center"
+        onClick={() => {
+          navigator.clipboard.writeText(window.location.href);
+          // setShareLinkedCopied(true);
+          // setTimeout(() => {
+          //   setShareLinkedCopied(false);
+          // }, 3000);
 
-      {listing.name}
+          toast.success("Copied to clipboard");
+          // Set the toast to close after 3 seconds
+          setTimeout(() => {
+            toast.dismiss();
+          }, 3000);
+        }}
+      >
+        <FiShare className="text-xl text-slate-500" />
+      </div>
+      {/* setShareLinkedCopied if i want to use it */}
+      {/* {shareLinkCopied && (
+        <p
+          className="fixed top-[19%] right-[5%] z-10 font-semibold
+        border-2 border-gray-400 rounded-md bg-white p-2"
+        >
+          Link Copied
+        </p>
+      )} */}
     </main>
   );
 };
