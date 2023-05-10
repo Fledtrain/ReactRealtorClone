@@ -5,3 +5,13 @@
 body {
   background-color: rgba(240, 253, 244, 0.719);
 }
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: #a8dadc !important;
+}
+
+.swiper-pagination-progressbar,
+.swiper-pagination-progressbar-fill {
+  background-color: #a8dadc !important;
+}
