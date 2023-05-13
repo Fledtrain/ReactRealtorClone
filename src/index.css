@@ -11,7 +11,11 @@ body {
   color: #a8dadc !important;
 }
 
-.swiper-pagination-progressbar,
+/* .swiper-pagination-progressbar,
 .swiper-pagination-progressbar-fill {
+  background-color: #a8dadc !important;
+} */
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
   background-color: #a8dadc !important;
 }

@@ -48,7 +48,7 @@ const Listing = () => {
       <Swiper
         slidesPerView={1}
         navigation
-        pagination={{ type: "progressbar" }}
+        pagination={{ type: "bullets" }}
         effect="fade"
         modules={[EffectFade]}
         autoplay={{ delay: 3000 }}
