@@ -19,3 +19,13 @@ body {
 .swiper-pagination-bullet-active {
   background-color: #a8dadc !important;
 }
+
+/* Removing Scrollbar in Chrome */
+::-webkit-scrollbar {
+  display: none;
+}
+/* Removing Scrollbar in Firefox */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
