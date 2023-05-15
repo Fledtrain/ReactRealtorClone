@@ -81,6 +81,8 @@ const Category = () => {
       <section className="max-w-6xl mx-auto px-3">
         <h1 className="text-3xl text-center mt-6 font-bold mb-6">
           Places for {params.categoryName}
+          {/* {/* Or I can write it like this too: */}
+          {/* {params.categoryName ==="rent" ? "places for rent" : "places for sale"}*/}
         </h1>
         {loading ? (
           <Spinner />
@@ -110,7 +112,9 @@ const Category = () => {
             )}
           </>
         ) : (
-          <p>There are no current offers</p>
+          <p>There are no current places for {params.categoryName}</p>
+          //   Or I can write it like this too:
+          //  <p>There are no current {params.categoryName ==="rent" ? "places for rent" : "places for sale"}</p>
         )}
       </section>
     </>
