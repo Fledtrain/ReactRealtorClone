@@ -3,7 +3,8 @@ Realtor Clone created using Reactjs and Tailwind CSS
 
 
 ## Features
-- Work In Progress Build
+- Working on deploying the production build 
+- fixing some bugs
 
 
 ## Installation
