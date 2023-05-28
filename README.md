@@ -1,11 +1,18 @@
 # ReactRealtorClone
-Realtor Clone created using Reactjs and Tailwind CSS
+This is a Realtor Clone created using Reactjs and Tailwind CSS
+
+This is for coding practice using React, Tailwind and using firebase
 
 
 ## Features
-- Working on deploying the production build 
-- fixing some bugs
+- Sign in with google auth
+- You can create your own listing
+- No loading times, fast and simple
 
+## Known bugs
+- Address location not properly showing on map (everybody lives in the middle of the ocean 💀)
+- When clicking home, offers, and profile, underline color not showing
+- When Creating listing, parking spot and furnished turns on but wont show to user.
 
 ## Installation
 
@@ -36,7 +43,6 @@ firebase deploy
 
 
 ## Acknowledgements
-
  - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
  - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
