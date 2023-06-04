@@ -50,7 +50,7 @@ const SignIn = () => {
             <form onSubmit={onSubmit}>
               <input
                 className=" mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white
-                 border-gray-300 rounded transition ease-in-out"
+              border-gray-300 rounded transition ease-in-out"
                 type="email"
                 id="email"
                 value={email}
@@ -60,7 +60,7 @@ const SignIn = () => {
               <div className="relative mb-6">
                 <input
                   className="w-full px-4 py-2 text-xl text-gray-700 bg-white
-                 border-gray-300 rounded transition ease-in-out"
+                border-gray-300 rounded transition ease-in-out"
                   type={showPassword ? "text" : "password"}
                   id="password"
                   value={password}
