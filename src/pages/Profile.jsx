@@ -103,15 +103,14 @@ const Profile = () => {
   return (
     <>
       <section className="max-w-6xl mx-auto flex justify-center items-center flex-col">
-        <h1 className="text-3xl text-center mt-6 font-bold">My Profile</h1>
-        <div className="w-full md:w-[50%] mt-6 px-3">
+        <h1 className="text-3xl text-center mt-6 font-bold text-slate-800">My Profile</h1>
+        <div className="w-full sm:w-[70%] md:w-[70%] lg:w-[50%] mt-6 px-3">
           <form>
             {/* Name Input */}
             <input
               className={`mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 
-              rounded transition ease-in-out ${
-                changeDetail && "bg-red-200 focus:bg-red-200"
-              }`}
+              rounded transition ease-in-out ${changeDetail && "bg-red-200 focus:bg-red-200"
+                }`}
               type="text"
               id="name"
               value={name}
@@ -136,23 +135,23 @@ const Profile = () => {
               disabled
             />
 
-            <div className="flex justify-between whitespace-nowrap text-sm sm:text-lg mb-6">
+            <div className="flex justify-between whitespace-nowrap text-sm md:text-lg mb-6">
               <p className="flex items-center ">
-                Do you want to change your name?
+                Want to change your name?
               </p>
               <span
                 onClick={() => {
                   changeDetail && onSubmit();
                   setChangeDetail((prevState) => !prevState);
                 }}
-                className="text-red-600 hover:text-red-800 2xl:mr-42 xl:mr-40 lg:mr-24
-                transition ease-in-out duration-200 mr-20 cursor-pointer"
+                className="text-red-600 hover:text-red-800 lg:mr-20 xl:mr-36 2xl:mr-42
+                transition ease-in-out duration-200 cursor-pointer"
               >
                 {changeDetail ? "Apply change" : "Edit"}
               </span>
               <p
                 onClick={onLogout}
-                className="text-blue-600 hover:text-blue-800 2xl:ml-2 
+                className="text-blue-600 hover:text-blue-800 mr-32 ml-10 sm:ml-0 sm:mr-0 2xl:ml-2  
               cursor-pointer transition ease-in-out duration-200"
               >
                 Sign Out
