@@ -17,6 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 import EditListing from "./pages/EditListing";
 import Listing from "./pages/Listing";
 import Category from "./pages/Category";
+import About from "./pages/About";
 function App() {
   return (
     <>
@@ -37,6 +38,7 @@ function App() {
             path="category/:categoryName/:listingID"
             element={<Listing />}
           />
+          <Route path="/about" element={<About />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/offers" element={<Offers />} />
           <Route path="/category/:categoryName" element={<Category />} />
