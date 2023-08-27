@@ -10,10 +10,10 @@ This is for coding practice using React, Tailwind and using firebase
 - No loading times, fast and simple
 
 ## Known bugs
-- Address location not properly showing on map (everybody lives in the middle of the ocean 💀) -6/5/23
+- Address location Fixed - 8/27/23
 - When clicking home, offers, and profile, underline color not showing -6/5/23
-- When Creating listing, parking spot and furnished turns on but wont show to user. -6/5/23
-- Regular Signing In does not work currently, Google sign in is fine -6/5/23
+- Fixed Create Listing page - 8/27/23
+- Both email and google auth can be used to sign in - 8/27/23
 
 ## Installation
 

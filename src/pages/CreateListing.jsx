@@ -17,7 +17,7 @@ const API_KEY = import.meta.env.VITE_APP_GEOCODE_API_KEY;
 const CreateListing = () => {
   const navigate = useNavigate();
   const auth = getAuth();
-  const [geoLocationEnabled, setGeoLocationEnabled] = useState(true);
+  const [geoLocationEnabled, setGeoLocationEnabled] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -52,29 +52,35 @@ const CreateListing = () => {
     latitude,
     images,
   } = formData;
-  const onChange = (event) => {
+  const onChange = (e) => {
+    console.log("Target ID:", e.target.id);
+    console.log("Target Value:", e.target.value);
+
+
     let boolean = null;
-    if (event.target.value === "true") {
+    if (e.target.value === "true") {
       boolean = true;
     }
-    if (event.target.value === "false") {
+    if (e.target.value === "false") {
       boolean = false;
     }
+
     // Files
-    if (event.target.files) {
+    if (e.target.files) {
       setFormData((prevState) => ({
         ...prevState,
-        images: event.target.files,
+        images: e.target.files,
       }));
     }
     // Text/Boolean/Number
-    if (!event.target.files) {
+    if (!e.target.files) {
+      const inputValue = e.target.type === "number" ? parseInt(e.target.value, 10) : e.target.value;
       setFormData((prevState) => ({
         ...prevState,
-        [event.target.id]: boolean ?? event.target.value,
+        [e.target.id]: boolean ?? inputValue,
       }));
     }
-  };
+  }
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -207,11 +213,10 @@ const CreateListing = () => {
               value="sale"
               onClick={onChange}
               className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg 
-              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${
-                type === "rent"
+              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${type === "rent"
                   ? "bg-white text-black"
                   : "bg-slate-600 text-white"
-              }`}
+                }`}
             >
               sell
             </button>
@@ -221,11 +226,10 @@ const CreateListing = () => {
               value="rent"
               onClick={onChange}
               className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg 
-              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${
-                type === "sale"
+              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${type === "sale"
                   ? "bg-white text-black"
                   : "bg-slate-600 text-white"
-              }`}
+                }`}
             >
               rent
             </button>
@@ -291,25 +295,23 @@ const CreateListing = () => {
               value={true}
               onClick={onChange}
               className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg 
-              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${
-                !parking === "true"
+              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${parking
                   ? "bg-slate-600 text-white"
                   : "bg-white text-black"
-              }`}
+                }`}
             >
               yes
             </button>
             <button
               type="button"
               id="parking"
-              value={true}
+              value={false}
               onClick={onChange}
               className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg 
-              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${
-                parking === "true"
+              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${parking
                   ? "bg-white text-black"
                   : "bg-slate-600 text-white"
-              }`}
+                }`}
             >
               no
             </button>
@@ -325,25 +327,23 @@ const CreateListing = () => {
               value={true}
               onClick={onChange}
               className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg 
-              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${
-                !furnished === "true"
+              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${furnished
                   ? "bg-slate-600 text-white"
                   : "bg-white text-black"
-              }`}
+                }`}
             >
               yes
             </button>
             <button
               type="button"
               id="furnished"
-              value={true}
+              value={false}
               onClick={onChange}
               className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg 
-              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${
-                furnished === "true"
+              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${furnished
                   ? "bg-white text-black"
                   : "bg-slate-600 text-white"
-              }`}
+                }`}
             >
               no
             </button>
@@ -411,7 +411,7 @@ const CreateListing = () => {
           />
           {/* End of Description Section */}
 
-          {/* Furnished Section */}
+          {/* Offer Section */}
           <p className="text-lg font-semibold">Offer</p>
           <div className="flex mb-6">
             <button
@@ -420,29 +420,28 @@ const CreateListing = () => {
               value={true}
               onClick={onChange}
               className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg 
-              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${
-                !offer === "true"
+              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${offer
                   ? "bg-slate-600 text-white"
                   : "bg-white text-black"
-              }`}
+                }`}
             >
               yes
             </button>
             <button
               type="button"
               id="offer"
-              value={true}
+              value={false}
               onClick={onChange}
               className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg 
-              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${
-                offer === "true"
+              focus:shadow-lg active:shadow-lg transition ease-in-out duration-150 w-full ${offer
                   ? "bg-white text-black"
                   : "bg-slate-600 text-white"
-              }`}
+                }`}
             >
               no
             </button>
           </div>
+          {/* End of Offer Section */}
 
           {/* Regular Price Section */}
           <div className="flex items-center mb-6">

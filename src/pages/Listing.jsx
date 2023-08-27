@@ -99,11 +99,11 @@ const Listing = () => {
             {listing.name} - $
             {listing.offer
               ? listing.discountedPrice
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
               : listing.regularPrice
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             {listing.type === "rent" ? " /month" : ""}
           </p>
           <p className="flex items-center mt-6 mb-3 font-semibold">
@@ -138,7 +138,7 @@ const Listing = () => {
             </li>
             <li className="flex items-center space-x-1 mb-2 whitespace-nowrap">
               <FaBath className="text-lg mr-2" />
-              {listing.bathrooms > 1 ? `${listing.bedrooms} Baths` : "1 Bath"}
+              {listing.baths > 1 ? `${listing.baths} Baths` : "1 Bath"}
             </li>
             <li className="flex items-center space-x-1 mb-2 whitespace-nowrap">
               <FaParking className="text-lg mr-2" />
