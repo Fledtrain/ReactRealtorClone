@@ -52,11 +52,14 @@ const CreateListing = () => {
     latitude,
     images,
   } = formData;
+
+  /** Change the value of the formData object
+   * @function onChange
+   * @param {object} e - event object  
+   * @returns {object} formData
+   */
   const onChange = (e) => {
-    console.log("Target ID:", e.target.id);
-    console.log("Target Value:", e.target.value);
-
-
+    // Type
     let boolean = null;
     if (e.target.value === "true") {
       boolean = true;

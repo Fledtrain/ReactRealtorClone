@@ -49,6 +49,10 @@ const Category = () => {
     fetchListings();
   }, [params.categoryName]);
 
+  /**Fetch more Listings
+   * @function onFetchMoreListings
+   * @returns {object} listing
+   */
   const onFetchMoreListings = async () => {
     try {
       const listingRef = collection(db, "listings");
